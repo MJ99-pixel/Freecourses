@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Free Online Graphic Design Class for Beginners</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Join our free online graphic design class for beginners and aspiring creatives. Learn Photoshop, Illustrator, color theory, and more from industry pros.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900;700;500;400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://img.icons8.com/color/96/000000/design--v1.png" />
+  <style>
+    :root {
+      --purple: #7F53FF;
+      --teal: #43e6d8;
+      --coral: #ff7d7d;
+      --gradient-main: linear-gradient(100deg, var(--purple) 0%, var(--teal) 70%, var(--coral) 100%);
+      --gradient-accent: linear-gradient(120deg, #43e6d8 0%, #7f53ff 60%, #ff7d7d 100%);
+      --gray-bg: #F7F8FD;
+      --dark: #25243a;
+      --light: #ffffff;
+      --shadow: 0 10px 36px 0 rgba(31, 36, 57, 0.07);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      background: var(--gray-bg);
+      font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+      color: var(--dark);
+    }
+    /* === Content Locker Styles === */
+    #locker {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(30, 41, 59, 0.92);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      animation: fadeIn 0.9s cubic-bezier(.29,.93,.53,.89);
+      backdrop-filter: blur(4px);
+    }
+    #locker.show { display: flex; }
+    @keyframes fadeIn {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+    .locker-box {
+      background: linear-gradient(120deg, #fff 80%, #e1e8f8 100%);
+      padding: 48px 34px 38px 34px;
+      border-radius: 24px;
+      box-shadow: 0 14px 44px rgba(127,83,255,0.13), 0 4px 24px rgba(67,230,216,0.14);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 335px;
+      max-width: 94vw;
+      animation: popIn 0.7s cubic-bezier(.23,1.14,.51,1.14);
+      position: relative;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.75) translateY(48px);}
+      70% { transform: scale(1.08);}
+      100% { transform: scale(1) translateY(0);}
+    }
+    .locker-icon {
+      font-size: 58px;
+      background: linear-gradient(90deg, #2196f3 20%, #7F53FF 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      animation: pulse 1.6s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { filter: drop-shadow(0 0 0 #7F53FF); }
+      50% { filter: drop-shadow(0 0 8px #2196f3); }
+    }
+    .locker-title {
+      font-size: 1.53em;
+      color: #25243a;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .locker-desc {
+      color: #4b4a74;
+      text-align: center;
+      margin-bottom: 22px;
+      font-size: 1.12em;
+      line-height: 1.6;
+    }
+    .lock-btn {
+      background: linear-gradient(90deg, #2196f3 10%, #7F53FF 100%);
+      color: #fff;
+      padding: 16px 44px;
+      border: none;
+      border-radius: 32px;
+      font-size: 1.15em;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 8px 28px rgba(127, 83, 255, 0.14), 0 3px 14px rgba(33,150,243,0.09);
+      transition: background 0.3s, transform 0.18s;
+      margin-bottom: 13px;
+      letter-spacing: .4px;
+      outline: none;
+    }
+    .lock-btn:hover, .lock-btn:focus {
+      background: linear-gradient(90deg, #43e6d8 20%, #2196f3 100%);
+      transform: scale(1.06);
+    }
+    .after-action {
+      margin-top: 24px;
+      font-size: 1em;
+      color: #0f2027;
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.7s;
+    }
+    .locker-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: transparent;
+      border: none;
+      font-size: 1.8em;
+      color: #aaa;
+      cursor: pointer;
+      transition: color 0.2s;
+      z-index: 2;
+    }
+    .locker-close:hover {
+      color: #7F53FF;
+    }
+    @media (max-width: 600px) {
+      .locker-box {
+        min-width: 88vw;
+        padding: 22px 10px 18px 10px;
+      }
+      .lock-btn { padding: 14px 8vw; font-size: 1em;}
+      .locker-title { font-size: 1.15em;}
+    }
+    /* === End Content Locker Styles === */
+  </style>
+  <style>
+    /* Keep all your original page styles here */
+    /* ... (from your previous code) ... */
+  </style>
+</head>
+<body>
+  <!-- Content Locker -->
+  <div id="locker">
+    <div class="locker-box" role="dialog" aria-modal="true" aria-labelledby="lockerTitle" aria-describedby="lockerDesc">
+      <button class="locker-close" aria-label="Close Locker" onclick="unlockContent()">&times;</button>
+      <div class="locker-icon">🔒</div>
+      <div class="locker-title" id="lockerTitle">Premium Access Required</div>
+      <div class="locker-desc" id="lockerDesc">
+        This part of the class is exclusive for active students.<br>
+        <span style="color:#7F53FF;font-weight:600;">Click below to complete a quick offer and unlock all lessons instantly!</span>
+      </div>
+      <a href="https://smrturl.co/a/s0da26c5f32/62?s1=" class="lock-btn" target="_blank" onclick="showAfterAction()">✨ Complete Offer & Unlock</a>
+      <div class="after-action" id="afterActionMsg">
+        Done with the offer?<br>
+        <button class="lock-btn" style="background:#0f2027;" onclick="unlockContent()">Unlock Content Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Landing Page Content -->
+  <div id="main-content">
+    <header>
+      <div class="container hero">
+        <h1>Free Online Graphic Design Class<br>for Beginners</h1>
+        <div class="subtitle">Unlock your creative potential. Learn Photoshop, Illustrator, color theory, and more — <b>no experience needed!</b></div>
+        <div class="hero-visual">
+          <!-- SVG Illustration of laptop and design tools -->
+          <svg viewBox="0 0 400 220" width="100%" height="auto" fill="none">
+            <rect x="40" y="50" width="320" height="110" rx="18" fill="#fff" stroke="#e8e3f8" stroke-width="3"/>
+            <rect x="70" y="70" width="260" height="70" rx="10" fill="#f3f3fa"/>
+            <rect x="55" y="160" width="290" height="24" rx="7" fill="#e9e6fb"/>
+            <circle cx="90" cy="92" r="18" fill="#7F53FF"/>
+            <text x="78" y="100" font-size="22" font-family="Arial" fill="#fff">Ps</text>
+            <circle cx="140" cy="92" r="18" fill="#43e6d8"/>
+            <text x="128" y="100" font-size="22" font-family="Arial" fill="#fff">Ai</text>
+            <rect x="190" y="78" width="36" height="28" rx="8" fill="#ff7d7d"/>
+            <text x="196" y="98" font-size="17" font-family="Arial" fill="#fff">🎨</text>
+            <ellipse cx="250" cy="92" rx="17" ry="17" fill="#ff7d7d"/>
+            <text x="241" y="99" font-size="19" font-family="Arial" fill="#fff">🖼️</text>
+            <ellipse cx="300" cy="92" rx="17" ry="17" fill="#7F53FF"/>
+            <text x="292" y="98" font-size="17" font-family="Arial" fill="#fff">💡</text>
+            <rect x="110" y="120" width="40" height="14" rx="4" fill="#43e6d8"/>
+            <rect x="162" y="120" width="40" height="14" rx="4" fill="#ff7d7d"/>
+            <rect x="214" y="120" width="40" height="14" rx="4" fill="#7F53FF"/>
+          </svg>
+        </div>
+        <a href="#signup" class="cta-main" id="showLockerBtnHeader">Join Free Class Now</a>
+        <div class="countdown-box" id="countdown">
+          Class Starts In: <span id="timer">03d 12h 15m 44s</span>
+        </div>
+      </div>
+      <svg class="curve-divider" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#fff" d="M0,32 C300,100 1140,0 1440,50 L1440,70 L0,70 Z"></path></svg>
+    </header>
+    
+    <section class="section">
+      <div class="container">
+        <div class="section-title">What You'll Learn</div>
+        <div class="section-subtitle">Master industry-standard tools and creative skills in just a few lessons.</div>
+        <ul class="curriculum-list">
+          <li class="curriculum-item"><i>🎨</i> Introduction to Graphic Design Principles & Color Theory</li>
+          <li class="curriculum-item"><i>🖌️</i> Hands-on with <b>Adobe Photoshop</b>: Editing & Manipulation</li>
+          <li class="curriculum-item"><i>🖍️</i> Vector Graphics & Logo Design in <b>Adobe Illustrator</b></li>
+          <li class="curriculum-item"><i>📐</i> Typography, Moodboards, and Layouts</li>
+          <li class="curriculum-item"><i>📱</i> Social Media Visuals & Portfolio Tips</li>
+          <li class="curriculum-item"><i>👩‍🎨</i> Creative Exercises & Real-World Projects</li>
+        </ul>
+      </div>
+      <svg class="divider-svg" viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#F7F8FD" d="M0,10 C400,60 1040,0 1440,40 L1440,60 L0,60 Z"></path></svg>
+    </section>
+
+    <section class="section bg-alt">
+      <div class="container">
+        <div class="section-title">Meet Your Instructor</div>
+        <div class="instructor-bio">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor" class="instructor-photo" />
+          <div class="instructor-info">
+            <h3>Li Hua</h3>
+            <p>Award-winning graphic designer with 9+ years experience in branding, UI/UX, and digital illustration. Sarah has trained 400+ students and worked with top creative agencies.</p>
+            <p>Certified expert in:</p>
+            <div class="instructor-tools">
+              <img src="https://img.icons8.com/color/48/000000/adobe-photoshop.png" alt="Photoshop" title="Adobe Photoshop" />
+              <img src="https://img.icons8.com/color/48/000000/adobe-illustrator.png" alt="Illustrator" title="Adobe Illustrator" />
+              <img src="https://img.icons8.com/color/48/000000/figma--v1.png" alt="Figma" title="Figma" />
+              <img src="https://img.icons8.com/color/48/000000/canva.png" alt="Canva" title="Canva" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="divider-svg" viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#fff" d="M0,30 C380,80 1060,0 1440,50 L1440,60 L0,60 Z"></path></svg>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">Student Success Stories</div>
+        <div class="section-subtitle">
+          Thousands have taken our class. Here’s what a few of them say!
+        </div>
+        <div class="testimonials">
+          <div class="testimonial">
+            <div class="quote">“</div>
+            <div class="testimonial-content">
+              This class made design tools finally make sense! I created my first logo and got freelance work within 2 weeks.
+            </div>
+            <div class="testimonial-user">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user1">
+              <span class="name">James A.</span>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="quote">“</div>
+            <div class="testimonial-content">
+              The lessons are clear and fun. Sarah is an inspiring teacher. Highly recommended for anyone starting out!
+            </div>
+            <div class="testimonial-user">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="user2">
+              <span class="name">Lina R.</span>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="quote">“</div>
+            <div class="testimonial-content">
+              Loved the creative exercises and portfolio tips. I now feel confident to apply for designer jobs.
+            </div>
+            <div class="testimonial-user">
+              <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="user3">
+              <span class="name">Alex H.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="divider-svg" viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#F7F8FD" d="M0,15 C480,50 960,0 1440,40 L1440,60 L0,60 Z"></path></svg>
+    </section>
+
+    <section class="section bg-alt" id="signup">
+      <div class="container" style="text-align:center;">
+        <div class="section-title" style="margin-bottom:24px;">Ready to Start?</div>
+        <div class="section-subtitle" style="margin-bottom:30px;">
+          Secure your spot — the next free class starts soon!
+        </div>
+        <a href="#" class="cta-main" id="showLockerBtnSignup" style="font-size:1.3rem;">Join Free Class Now</a>
+        <div style="font-size:.99rem;color:#737399;margin-top:14px;">
+          No credit card required. 100% beginner-friendly.
+        </div>
+      </div>
+    </section>
+
+    <footer style="background:var(--gradient-main);padding:38px 0 18px 0;text-align:center;color:#fff;font-size:1.1rem;letter-spacing:.2px;">
+      &copy; 2025 CreativeDesignClass.com — Unleash Your Creativity!
+    </footer>
+    <script>
+      // Countdown Timer (set to 3 days from now for demo)
+      function startCountdown(duration, display) {
+        function update() {
+          let t = duration - Math.floor((Date.now() - start) / 1000);
+          if (t < 0) t = 0;
+          let d = Math.floor(t / 86400),
+              h = Math.floor((t % 86400) / 3600),
+              m = Math.floor((t % 3600) / 60),
+              s = t % 60;
+          display.textContent = `${d.toString().padStart(2,'0')}d ` +
+                               `${h.toString().padStart(2,'0')}h ` +
+                               `${m.toString().padStart(2,'0')}m ` +
+                               `${s.toString().padStart(2,'0')}s`;
+          if (t > 0) setTimeout(update, 1000);
+        }
+        let start = Date.now();
+        update();
+      }
+      document.addEventListener("DOMContentLoaded", function() {
+        let timer = document.getElementById('timer');
+        startCountdown(3*24*3600+12*3600+15*60+44, timer);
+
+        // Locker triggers for both "Join Free Class Now" buttons
+        document.getElementById('showLockerBtnHeader').onclick = function(e) {
+          e.preventDefault();
+          document.getElementById('locker').classList.add('show');
+        };
+        document.getElementById('showLockerBtnSignup').onclick = function(e) {
+          e.preventDefault();
+          document.getElementById('locker').classList.add('show');
+        };
+      });
+
+      // Locker logic functions
+      function showAfterAction() {
+        document.getElementById('afterActionMsg').style.display = 'block';
+      }
+      function unlockContent() {
+        document.getElementById('locker').classList.remove('show');
+      }
+    </script>
+  </div>
+</body>
+</html>
